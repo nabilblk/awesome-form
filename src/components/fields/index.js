@@ -29,7 +29,6 @@ export const customInput = props => {
         )}>
             <label>{props.label}</label>
             <input {...props.input} type={props.type} autoFocus={props.autoFocus}/>
-            {/*<ReactJson src={props.meta}/>*/}
             {(meta.error && meta.touched) && (
                 <div className="feedback-text error-text">{meta.error}</div>
             )}
@@ -45,7 +44,6 @@ export const customSelect = props => {
                 <option value="tabs">FR</option>
                 <option value="spaces">AR</option>
             </select>
-            {/*<ReactJson src={props.meta}/>*/}
         </div>
     )
 }

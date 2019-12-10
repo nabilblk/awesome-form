@@ -33,6 +33,7 @@ class RegisterForm extends Component {
     }
 }
 
+// RegisterForm Decorator
 RegisterForm = reduxForm({
     form: 'register',
     asyncValidate,
