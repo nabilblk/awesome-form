@@ -1,10 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import {Provider} from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+import {reducer as formReducer} from 'redux-form';
+
+// Specify Reducers and add redux form reducer to the list
+
+const reducers = {
+    // In realistic Situation You will have more reducers here
+    form: formReducer
+};
+
+const reducer = combineReducers(reducers);
+let store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENTION__ &&
+    window.__REDUX_DEVTOOLS_EXTENTION__()
+)
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App/>
+    </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
