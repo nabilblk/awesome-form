@@ -19,12 +19,12 @@ class RegisterForm extends Component {
                 <Field name="password" component={customInput} type="password" label="Password" validate={[required]}/>
                 <Field name="confirmpassword" component={customInput} type="password" label="Confirm Password"
                        validate={[required, matchPassword]}/>
-                <Field name="preference" component={customSelect} label="Preferred Formatting"/>
+                <Field name="preference" component={customSelect} label="Preferred Language"/>
                 <Field
                     name="newsletter"
                     component={customInput}
                     type="checkbox"
-                    label='Sign Up ?'
+                    label='Sign Up to newsletter ?'
                 />
                 <FieldArray name="discountCodes" component={discounts}></FieldArray>
                 <button type="submit">Submit</button>
